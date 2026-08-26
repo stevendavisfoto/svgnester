@@ -96,11 +96,24 @@ export const StatusBar = styled.p`
   padding: 8px 10px;
 `;
 
+export const GitHubLink = styled.a`
+  align-items: center;
+  color: ${c.textGhost};
+  display: flex;
+  flex-shrink: 0;
+  margin-left: auto;
+  text-decoration: none;
+  transition: color 0.15s;
+
+  &:hover {
+    color: ${c.textPrimary};
+  }
+`;
+
 export const ContactLink = styled.a`
   color: ${c.textGhost};
   font-size: 11px;
   font-weight: 500;
-  margin-left: auto;
   text-decoration: none;
   transition: color 0.15s;
 

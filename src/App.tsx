@@ -1,5 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ShapesIcon, MoonIcon, SunIcon } from "@phosphor-icons/react";
+import {
+  ShapesIcon,
+  MoonIcon,
+  SunIcon,
+  GithubLogoIcon,
+} from "@phosphor-icons/react";
 import { ThemeVariables } from "src/theme";
 import { useColorScheme } from "src/hooks/useColorScheme";
 import { GeometryUtil } from "src/core/geometry";
@@ -480,6 +485,15 @@ export default function App() {
             <S.LogoText>
               SVG<S.LogoAccent>nester</S.LogoAccent>
             </S.LogoText>
+            <S.GitHubLink
+              href="https://github.com/stevendavisfoto/svgnester"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View source on GitHub"
+              title="View source on GitHub"
+            >
+              <GithubLogoIcon size={16} weight="fill" />
+            </S.GitHubLink>
             <S.ThemeToggleBtn
               onClick={toggleScheme}
               aria-label={
