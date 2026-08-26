@@ -25,6 +25,7 @@ interface SvgCanvasProps {
   onDownload?: () => void;
   uploadDisabled?: boolean;
   uploadParsing?: boolean;
+  uploadProgress?: number;
   uploadError?: string | null;
 }
 
@@ -87,6 +88,7 @@ export function SvgCanvas({
   onDownload,
   uploadDisabled,
   uploadParsing,
+  uploadProgress,
   uploadError,
 }: SvgCanvasProps) {
   const [confirmOpen, setConfirmOpen] = useState(false);
@@ -287,6 +289,7 @@ export function SvgCanvas({
                 onSvgLoaded={onSvgLoaded}
                 disabled={uploadDisabled ?? false}
                 parsing={uploadParsing}
+                progress={uploadProgress}
                 error={uploadError}
               />
             ) : (

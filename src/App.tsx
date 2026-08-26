@@ -60,6 +60,7 @@ export default function App() {
   const [running, setRunning] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
   const [parsing, setParsing] = useState(false);
+  const [parseProgress, setParseProgress] = useState(0);
 
   // Physical sheet dimensions and unit.  These live parallel to SVG-unit
   // geometry and are only for the UI — the nesting algorithm never sees them.
@@ -84,6 +85,7 @@ export default function App() {
     (svgString: string) => {
       setUploadError(null);
       setParsing(true);
+      setParseProgress(0);
 
       // Phase 1: DOMParser runs on the main thread (workers don't have it).
       // This is fast — it only extracts attribute data, no tessellation.
@@ -123,12 +125,21 @@ export default function App() {
       }, 30_000);
 
       worker.onmessage = (
-        e: MessageEvent<{ polygons?: NestPolygon[]; error?: string }>,
+        e: MessageEvent<{
+          polygons?: NestPolygon[];
+          progress?: number;
+          error?: string;
+        }>,
       ) => {
+        const { polygons, progress, error } = e.data;
+        if (progress !== undefined) {
+          setParseProgress(progress);
+          return;
+        }
         clearTimeout(timeout);
         worker.terminate();
         setParsing(false);
-        const { polygons, error } = e.data;
+        setParseProgress(0);
         if (error) {
           setUploadError(
             `Could not process this SVG: ${error}. Try re-saving or re-exporting the file from your design tool.`,
@@ -562,6 +573,7 @@ export default function App() {
             onDownload={handleDownload}
             uploadDisabled={running || parsing}
             uploadParsing={parsing}
+            uploadProgress={parseProgress}
             uploadError={uploadError}
           />
         </S.Main>

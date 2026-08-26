@@ -1,5 +1,14 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { c } from "src/theme";
+
+const spin = keyframes`
+  to { transform: rotate(360deg); }
+`;
+
+const pulse = keyframes`
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+`;
 
 export const DropZone = styled.div<{
   $dragging?: boolean;
@@ -87,15 +96,60 @@ export const Hint = styled.span`
 `;
 
 export const ParsingBanner = styled.div`
+  align-items: center;
   background: ${c.accentBg};
   border: 1px solid ${c.accentBorder};
   border-radius: 8px;
   color: ${c.accentLight};
+  display: flex;
+  flex-direction: column;
   font-size: 13px;
+  gap: 10px;
   margin-top: 4px;
-  padding: 10px 14px;
+  max-width: 400px;
+  padding: 14px 16px;
   text-align: center;
   width: 100%;
+`;
+
+export const Spinner = styled.span`
+  animation: ${spin} 0.9s linear infinite;
+  border: 2px solid ${c.accentBorder};
+  border-top-color: ${c.accent};
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+  height: 20px;
+  width: 20px;
+`;
+
+export const ParsingMessage = styled.span`
+  animation: ${pulse} 1.8s ease-in-out infinite;
+  font-size: 13px;
+  font-weight: 500;
+`;
+
+export const ProgressTrack = styled.div`
+  background: ${c.accentBorder};
+  border-radius: 99px;
+  height: 4px;
+  overflow: hidden;
+  width: 100%;
+`;
+
+export const ProgressFill = styled.div<{ $pct: number }>`
+  background: ${c.accent};
+  border-radius: 99px;
+  height: 100%;
+  transition: width 0.3s ease;
+  width: ${({ $pct }) => $pct}%;
+`;
+
+export const ProgressLabel = styled.span`
+  color: ${c.accentLight};
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.7;
 `;
 
 export const ErrorBanner = styled.div`
@@ -106,6 +160,7 @@ export const ErrorBanner = styled.div`
   font-size: 13px;
   line-height: 1.5;
   margin-top: 4px;
+  max-width: 400px;
   padding: 10px 14px;
   text-align: left;
   width: 100%;

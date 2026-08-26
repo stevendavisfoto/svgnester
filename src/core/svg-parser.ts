@@ -534,11 +534,13 @@ export function extractElements(svgString: string): SerializedElement[] {
 export function tessellateElements(
   elements: SerializedElement[],
   tolerance: number,
+  onProgress?: (pct: number) => void,
 ): NestPolygon[] {
   const polygons: NestPolygon[] = [];
   let id = 0;
 
   for (let i = 0; i < elements.length; i++) {
+    if (onProgress) onProgress(Math.round((i / elements.length) * 90));
     const { tag, attrs, parentTransform } = elements[i];
     const parentMatrix = new Matrix();
     parentMatrix.data = parentTransform;
@@ -564,7 +566,9 @@ export function tessellateElements(
     polygons.push(poly);
   }
 
+  if (onProgress) onProgress(95);
   toTree(polygons);
+  if (onProgress) onProgress(100);
   return polygons;
 }
 

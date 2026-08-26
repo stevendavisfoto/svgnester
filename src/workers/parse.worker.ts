@@ -19,19 +19,20 @@ interface ParseRequest {
 
 interface ParseResponse {
   polygons?: NestPolygon[];
+  progress?: number;
   error?: string;
 }
 
-self.onmessage = (e: MessageEvent<ParseRequest>) => {
+const ctx = self as unknown as DedicatedWorkerGlobalScope;
+
+ctx.onmessage = (e: MessageEvent<ParseRequest>) => {
   const { elements, curveTolerance } = e.data;
   try {
-    const polygons = tessellateElements(elements, curveTolerance);
-    (self as unknown as DedicatedWorkerGlobalScope).postMessage({
-      polygons,
-    } satisfies ParseResponse);
+    const polygons = tessellateElements(elements, curveTolerance, (pct) => {
+      ctx.postMessage({ progress: pct } satisfies ParseResponse);
+    });
+    ctx.postMessage({ polygons } satisfies ParseResponse);
   } catch (err) {
-    (self as unknown as DedicatedWorkerGlobalScope).postMessage({
-      error: (err as Error).message,
-    } satisfies ParseResponse);
+    ctx.postMessage({ error: (err as Error).message } satisfies ParseResponse);
   }
 };
