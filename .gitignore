@@ -1,1 +1,14 @@
-.vercel
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Rust/WASM build artifacts
+wasm/target/
+
+# Deployment
+.vercel/
+
+# OS
+.DS_Store
