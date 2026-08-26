@@ -1,0 +1,14 @@
+/Users/steven/svgnest-fast/wasm/target/wasm32-unknown-unknown/release/deps/serde-f18d7f8eef45beff.d: /Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs /Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs /Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs /Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs /Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs /Users/steven/svgnest-fast/wasm/target/wasm32-unknown-unknown/release/build/serde-5f2a89093d0342dc/out/private.rs
+
+/Users/steven/svgnest-fast/wasm/target/wasm32-unknown-unknown/release/deps/libserde-f18d7f8eef45beff.rlib: /Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs /Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs /Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs /Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs /Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs /Users/steven/svgnest-fast/wasm/target/wasm32-unknown-unknown/release/build/serde-5f2a89093d0342dc/out/private.rs
+
+/Users/steven/svgnest-fast/wasm/target/wasm32-unknown-unknown/release/deps/libserde-f18d7f8eef45beff.rmeta: /Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs /Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs /Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs /Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs /Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs /Users/steven/svgnest-fast/wasm/target/wasm32-unknown-unknown/release/build/serde-5f2a89093d0342dc/out/private.rs
+
+/Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs:
+/Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs:
+/Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs:
+/Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs:
+/Users/steven/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs:
+/Users/steven/svgnest-fast/wasm/target/wasm32-unknown-unknown/release/build/serde-5f2a89093d0342dc/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/steven/svgnest-fast/wasm/target/wasm32-unknown-unknown/release/build/serde-5f2a89093d0342dc/out

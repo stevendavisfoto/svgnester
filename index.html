@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+
+    <!-- Primary meta -->
+    <title>
+      SVGnester — Free Online SVG Nesting Tool for CNC, Laser & Plasma Cutting
+    </title>
+    <meta
+      name="description"
+      content="SVGnester is a free, browser-based SVG nesting tool. Automatically arrange parts on your sheet to minimize material waste — ideal for CNC routing, laser cutting, and plasma cutting. No install, no login."
+    />
+    <meta
+      name="keywords"
+      content="SVG nesting, CNC nesting, laser cutting nesting, plasma cutting nesting, sheet optimization, part nesting, free nesting software, online nesting tool, SVG nest, material optimization, cut optimization"
+    />
+    <meta name="author" content="SVGnester" />
+    <link rel="canonical" href="https://www.svgnester.com/" />
+
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.svgnester.com/" />
+    <meta
+      property="og:title"
+      content="SVGnester — Free Online SVG Nesting Tool"
+    />
+    <meta
+      property="og:description"
+      content="Automatically arrange parts on your sheet to minimize material waste. Free, browser-based nesting for CNC routing, laser cutting, and plasma cutting."
+    />
+    <meta
+      property="og:image"
+      content="https://www.svgnester.com/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="SVGnester" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.svgnester.com/" />
+    <meta
+      name="twitter:title"
+      content="SVGnester — Free Online SVG Nesting Tool"
+    />
+    <meta
+      name="twitter:description"
+      content="Automatically arrange parts on your sheet to minimize material waste. Free, browser-based nesting for CNC routing, laser cutting, and plasma cutting."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.svgnester.com/og-image.png"
+    />
+
+    <!-- PWA / Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0f0f13" />
+    <meta name="application-name" content="SVGnester" />
+    <meta name="apple-mobile-web-app-title" content="SVGnester" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SVGnester",
+        "url": "https://www.svgnester.com/",
+        "description": "Free browser-based SVG nesting tool. Automatically arrange parts on a sheet to minimize material waste for CNC routing, laser cutting, and plasma cutting.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "Genetic algorithm part nesting",
+          "SVG file import and export",
+          "CNC, laser, and plasma kerf/offset support",
+          "Grain direction alignment",
+          "Part mirroring and rotation control",
+          "Concave shape support",
+          "Multi-sheet packing",
+          "Fill-in mode for maximum material utilization",
+          "Pan and zoom preview",
+          "No installation required"
+        ],
+        "screenshot": "https://www.svgnester.com/og-image.png",
+        "softwareVersion": "1.0",
+        "inLanguage": "en"
+      }
+    </script>
+
+    <!-- Set data-theme before first paint to prevent flash -->
+    <script>
+      (function () {
+        var stored = localStorage.getItem("color-scheme");
+        var scheme = stored === "dark" || stored === "light" ? stored : "dark";
+        document.documentElement.setAttribute("data-theme", scheme);
+      })();
+    </script>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body,
+      #root {
+        height: 100%;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: #0f0f13;
+        color: #e2e2e6;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
